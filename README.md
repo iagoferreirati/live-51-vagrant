@@ -17,9 +17,9 @@ Vagrantfile
     - ANSIBLE
     - PUPPET
 
-Comando na maquina fisica.    
+Comandos vagrant:   
 
-vagrant init ubuntu/focal64
-vagrant up
-vagrant ssh
-vagrant destroy
+- vagrant init ubuntu/focal64
+- vagrant up
+- vagrant ssh
+- vagrant destroy
