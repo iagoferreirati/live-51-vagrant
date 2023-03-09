@@ -1,0 +1,36 @@
+- name: update cache repo #apt update
+  apt:
+    update_cache: yes
+
+- name: update SO
+  apt:
+    name: "*"
+    state: latest
+
+- name: Set a hostname
+  hostname:
+    name: live-52-vagrant-ansible
+
+- name: install packages
+  apt:
+    name:
+      - vim
+      - net-tools
+      - htop
+      - nmap
+      - wget
+      - curl
+      - telnet
+      #- btop
+
+- name: Add users company
+  user:
+    name: iagoferreirati
+    shell: /bin/bash
+    home: /home/iagoferreirati
+
+- name: Add user company for sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    line: "iagoferreirati    ALL=(ALL:ALL) NOPASSWD: ALL"
+
